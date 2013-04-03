@@ -1,0 +1,11 @@
+Dependencies:
+
+Bundler:
+gem install bundler
+Then run bundle install
+
+PhantomJS:
+brew install phantomjs
+
+Ruby version >= 1.9.1
+

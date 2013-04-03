@@ -1,2 +1,4 @@
 tests.txt
 Gemfile.lock
+features/support/auth.rb
+.DS_Store

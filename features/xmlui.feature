@@ -37,3 +37,13 @@ Feature: xmlui
         And I click the "Subjects" link
         Then I should see "Browsing by Subject"
         And I should see "0,0 transition energies"
+
+    Scenario: Streaming Video
+        Given that I am on "/xmlui/handle/10214/2447"
+        Then I should see "Video Stream"
+        And I should see a video
+
+    Scenario: Authentication
+        Given that I have logged in
+        Then I should see "Logout"
+

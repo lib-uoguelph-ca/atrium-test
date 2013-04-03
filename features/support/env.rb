@@ -10,4 +10,6 @@ Capybara.javascript_driver = :poltergeist
 Capybara.app_host = 'http://atrium.lib.uoguelph.ca' 
 Capybara.default_selector = :css
 
+require './features/support/auth.rb'
+
 World(Capybara)

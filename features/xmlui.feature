@@ -39,11 +39,22 @@ Feature: xmlui
         And I should see "0,0 transition energies"
 
     Scenario: Streaming Video
-        Given that I am on "/xmlui/handle/10214/2447"
+        Given I am on "/handle/10214/2447"
         Then I should see "Video Stream"
         And I should see a video
 
     Scenario: Authentication
         Given that I have logged in
         Then I should see "Logout"
+
+    Scenario: Item Mapper
+        Given that I have logged in
+        And I am on "/handle/10214/151"
+        And I click the "Item Mapper" link
+        And I fill in "query" in "#ds-body" with "Burpee"
+        And I click the "Search Items" button
+        Then I should see "Campus Author Recognition Program Annual Reception 2011"
+    
+
+
 

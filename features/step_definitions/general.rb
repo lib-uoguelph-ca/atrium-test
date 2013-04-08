@@ -1,12 +1,15 @@
-Given(/^that I have logged in$/) do
-    Capybara.app_host = BASE_URL + '/xmlui' 
+Given(/^I fill in "(.*?)" in "(.*?)" with "(.*?)"$/) do |field, scope, value|
+    within(:css, scope) do
+      fill_in(field.gsub(' ', '_'), :with => value)
+    end
+end
 
-    require './features/support/auth.rb'
+Given(/^I click the "(.*?)" button$/) do |button|
+    click_button button
+end
 
-    visit '/ldap-login'
-    fill_in('username', :with => USER)
-    fill_in('ldap_password', :with => PASS)
-    click_button('Sign in')
+Given(/^I choose "(.*?)" from "(.*?)"$/) do |option, select|
+    select(option, :from => select)
 end
 
 Then(/^I should see "(.*?)"$/) do |text|
@@ -22,14 +25,10 @@ When /^I fill in "([^\"]*)" with "([^\"]*)"$/ do |field, value|
     fill_in(field.gsub(' ', '_'), :with => value)
 end
 
-Given(/^I fill in "(.*?)" in "(.*?)" with "(.*?)"$/) do |field, scope, value|
-    within(:css, scope) do
-      fill_in(field.gsub(' ', '_'), :with => value)
-    end
+Given(/^I upload "(.*?)" in "(.*?)"$/) do |file, field|
+    attach_file field, file
 end
 
-Given(/^I click the "(.*?)" button$/) do |button|
-    click_button button
+Given(/^I check all of the checkboxes$/) do
+  all('input[type="checkbox"]').each {|ch| check(ch[:id]) }
 end
-
-

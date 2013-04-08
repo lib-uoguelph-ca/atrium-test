@@ -54,7 +54,27 @@ Feature: xmlui
         And I fill in "query" in "#ds-body" with "Burpee"
         And I click the "Search Items" button
         Then I should see "Campus Author Recognition Program Annual Reception 2011"
-    
 
+    Scenario: ETD Submission
+        Given that I have logged in
+        And I am on "/submissions"
+        And I click the "start a new submission" link
+        And I choose "Theses & Dissertations - All (2011- )" from "handle"
+        And I click the "Next" button
+        And I click the "Next" button
+        And I fill in "dc_title" with "Test"
+        And I click the "Next" button
+        And I click the "Next" button
+        And I upload "/Users/doana/Code/atrium-test/features/support/files/atrium-test.pdf" in "file"
+        And I click the "Next" button
+        And I click the "Next" button
+        And I click the "Next" button
+        Then I should see "Distribution License"
+        And I should see "Complete Submission"
 
-
+    Scenario: Delete ETD Submissions
+        Given that I have logged in
+        And I am on "/submissions"
+        And I check all of the checkboxes
+        And I click the "Remove selected submissions" button
+        Then I should see "Submissions"

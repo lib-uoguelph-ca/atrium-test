@@ -2,3 +2,5 @@ tests.txt
 Gemfile.lock
 features/support/auth.rb
 .DS_Store
+*.sublime-workspace
+*.sublime-project

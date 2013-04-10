@@ -1,11 +1,18 @@
+This is a functional test suite for the atrium, implemented using ruby, cucumber, capybara, and poltergeist (phantomjs).
+
+To run the full test suite just run:
+'cucumber'
+
+To run a specific feature suite run: 
+'cucumber features/xmlui.feature'
+
 Dependencies:
+	Bundler:
+		gem install bundler
+		Then run 'bundle install'
 
-Bundler:
-gem install bundler
-Then run bundle install
+	PhantomJS:
+		OSX: brew install phantomjs
 
-PhantomJS:
-brew install phantomjs
-
-Ruby version >= 1.9.1
+	Ruby version >= 1.9.1
 

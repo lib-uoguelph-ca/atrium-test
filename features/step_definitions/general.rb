@@ -1,11 +1,18 @@
 Given(/^I fill in "(.*?)" in "(.*?)" with "(.*?)"$/) do |field, scope, value|
     within(:css, scope) do
-      fill_in(field.gsub(' ', '_'), :with => value)
+        fill_in(field.gsub(' ', '_'), :with => value)
     end
 end
 
 Given(/^I click the "(.*?)" button$/) do |button|
     click_button button
+end
+
+Given(/^I click the "(.*?)" button in "(.*?)"$/) do |button, scope|
+    within(:css, scope) do
+        click_button button
+    end
+    
 end
 
 Given(/^I choose "(.*?)" from "(.*?)"$/) do |option, select|

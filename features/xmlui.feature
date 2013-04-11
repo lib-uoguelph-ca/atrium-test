@@ -38,6 +38,12 @@ Feature: xmlui
         Then I should see "Browsing by Subject"
         And I should see "0,0 transition energies"
 
+    Scenario: Search
+        Given that I am on the xmlui home page
+        And I fill in "query" in "#ds-options" with "Doan"
+        And I click the "Go" button in "#ds-options"
+        And I should see "Risky Business"
+
     Scenario: Streaming Video
         Given I am on "/handle/10214/2447"
         Then I should see "Video Stream"

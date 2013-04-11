@@ -1,5 +1,5 @@
 Given(/^that I have logged in$/) do
-    Capybara.app_host = BASE_URL + '/xmlui' 
+    Capybara.app_host = BASE_URL + XMLUI_BASE 
 
     require './features/support/auth.rb'
 
@@ -10,16 +10,11 @@ Given(/^that I have logged in$/) do
 end
 
 Given(/^that I am on the xmlui home page$/) do
-    Capybara.app_host = BASE_URL + '/xmlui' 
+    Capybara.app_host = BASE_URL + XMLUI_BASE  
     visit '/'
 end
 
 Given(/I am on "(.*?)"$/) do |url|
-    Capybara.app_host = BASE_URL + '/xmlui' 
+    Capybara.app_host = BASE_URL + XMLUI_BASE  
     visit url
 end
-
-Given(/^I click the "(.*?)" link$/) do |link|
-    click_link link
-end
-

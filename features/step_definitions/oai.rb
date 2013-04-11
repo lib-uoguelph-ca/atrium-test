@@ -1,12 +1,12 @@
 
 
 Given(/^that I am on the OAI identification page$/) do
-	Capybara.app_host = BASE_URL + '/oai'
+	Capybara.app_host = BASE_URL + OAIPMH_BASE
 	visit '/request?verb=Identify'
 end
 
 Given(/^that I am on the OAI list formats page$/) do
-	Capybara.app_host = BASE_URL + '/oai'
+	Capybara.app_host = BASE_URL + OAIPMH_BASE
     visit '/request?verb=ListMetadataFormats'
 end 
 

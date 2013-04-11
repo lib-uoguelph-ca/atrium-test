@@ -19,17 +19,8 @@ Given(/^I choose "(.*?)" from "(.*?)"$/) do |option, select|
     select(option, :from => select)
 end
 
-Then(/^I should see "(.*?)"$/) do |text|
-    page.should have_content(text)
-end
-
-Then(/^I should see a video$/) do
-    page.should have_content("Video Stream")
-    #page.should have_selector('object')
-end
-
-When /^I fill in "([^\"]*)" with "([^\"]*)"$/ do |field, value|
-    fill_in(field.gsub(' ', '_'), :with => value)
+Given(/^I click the "(.*?)" link$/) do |link|
+    click_link link
 end
 
 Given(/^I upload "(.*?)" in "(.*?)"$/) do |file, field|
@@ -39,3 +30,20 @@ end
 Given(/^I check all of the checkboxes$/) do
   all('input[type="checkbox"]').each {|ch| check(ch[:id]) }
 end
+
+When /^I fill in "([^\"]*)" with "([^\"]*)"$/ do |field, value|
+    fill_in(field.gsub(' ', '_'), :with => value)
+end
+
+Then(/^I should see "(.*?)"$/) do |text|
+    page.should have_content(text)
+end
+
+Then(/^I should see a video$/) do
+    page.should have_content("Video Stream")
+    #page.should have_selector('object')
+end
+
+
+
+

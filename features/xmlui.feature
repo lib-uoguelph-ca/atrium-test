@@ -40,9 +40,9 @@ Feature: xmlui
 
     Scenario: Search
         Given that I am on the xmlui home page
-        And I fill in "query" in "#ds-options" with "Doan"
+        And I fill in "query" in "#ds-options" with "Decision Support System"
         And I click the "Go" button in "#ds-options"
-        And I should see "Risky Business"
+        And I should see "Risky Business: Evaluation of a Decision Support System For Use in a High Risk Environment"
 
     Scenario: Streaming Video
         Given I am on "/handle/10214/2447"
@@ -57,7 +57,7 @@ Feature: xmlui
         Given that I have logged in
         And I am on "/handle/10214/151"
         And I click the "Item Mapper" link
-        And I fill in "query" in "#ds-body" with "Burpee"
+        And I fill in "query" in "#ds-body" with "Author"
         And I click the "Search Items" button
         Then I should see "Campus Author Recognition Program Annual Reception 2011"
 
